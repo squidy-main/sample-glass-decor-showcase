@@ -1,39 +1,14 @@
-
 import { Link } from 'react-router-dom';
 import Hero from '@/components/Hero';
 import ProductCard from '@/components/ProductCard';
 import FeaturedProduct from '@/components/FeaturedProduct';
 import { ArrowRight } from 'lucide-react';
 import { Element } from 'react-scroll';
+import { products } from '@/data/products';
 
 const Index = () => {
-  // Sample product data
-  const newArrivals = [
-    {
-      id: 1,
-      name: 'Sculptural Coffee Table',
-      category: 'Furniture',
-      image: 'https://images.unsplash.com/photo-1634712282287-14ed57b9cc89?auto=format&fit=crop&q=80&w=2906',
-    },
-    {
-      id: 2,
-      name: 'Minimalist Desk Lamp',
-      category: 'Lighting',
-      image: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=2936',
-    },
-    {
-      id: 3,
-      name: 'Ceramic Vase Set',
-      category: 'Decor',
-      image: 'https://images.unsplash.com/photo-1584589167171-541ce45f1eea?auto=format&fit=crop&q=80&w=2787',
-    },
-    {
-      id: 4,
-      name: 'Modern Lounge Chair',
-      category: 'Furniture',
-      image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&q=80&w=2865',
-    },
-  ];
+  // Get the first 4 products for new arrivals
+  const newArrivals = products.slice(0, 4);
 
   return (
     <>
@@ -57,6 +32,7 @@ const Index = () => {
               {newArrivals.map((product) => (
                 <ProductCard 
                   key={product.id}
+                  id={product.id}
                   name={product.name}
                   category={product.category}
                   image={product.image}
