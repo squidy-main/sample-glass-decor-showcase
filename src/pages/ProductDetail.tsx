@@ -51,7 +51,7 @@ const ProductDetail = () => {
   }
 
   return (
-    <div className="container mx-auto py-12 px-4">
+    <div className="container mx-auto pt-24 pb-12 px-4">
       {/* Back button */}
       <Link to="/collections" className="inline-flex items-center group mb-8">
         <ArrowLeft size={16} className="mr-2" />

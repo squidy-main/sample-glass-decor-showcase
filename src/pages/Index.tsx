@@ -15,7 +15,7 @@ const Index = () => {
       <Hero 
         title="Elevate your space with modern designs" 
         subtitle="Discover our curated collection of minimalist home decor and furniture" 
-        image="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=2800"
+        image="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80"
       />
       
       <Element name="content">
@@ -62,7 +62,7 @@ const Index = () => {
             <FeaturedProduct 
               title="The Nordic Collection"
               description="Inspired by Scandinavian design principles, our Nordic Collection combines simplicity, minimalism and functionality. Each piece is crafted with sustainable materials and designed to create harmony in any space."
-              image="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=2832"
+              image="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80"
               link="/collections"
             />
           </div>
@@ -73,7 +73,7 @@ const Index = () => {
             <FeaturedProduct 
               title="Japanese Inspired"
               description="Embodying the essence of Japanese aesthetics, this collection celebrates the beauty of imperfection, simplicity, and natural materials. Each piece tells a story of craftsmanship and mindful design."
-              image="https://images.unsplash.com/photo-1545083036-61d5d6fc6f4e?auto=format&fit=crop&q=80&w=2940"
+              image="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80"
               link="/collections"
               reverse={true}
             />
