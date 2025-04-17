@@ -1,9 +1,17 @@
 import ProductCard from '@/components/ProductCard';
 import { products } from '@/data/products';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Collections = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+  // Scroll to top when category changes
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, [activeCategory]);
 
   // Sample collections data
   const collections = [
@@ -32,6 +40,22 @@ const Collections = () => {
     ? products.filter(product => product.category.toLowerCase() === activeCategory.toLowerCase())
     : products;
 
+  // Handle category selection
+  const handleCategoryClick = (categoryId: string) => {
+    if (categoryId === activeCategory) {
+      setActiveCategory(null);
+    } else {
+      setActiveCategory(categoryId);
+      // Scroll to products section
+      const productsSection = document.querySelector('.products-section');
+      if (productsSection) {
+        setTimeout(() => {
+          productsSection.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  };
+
   return (
     <div className="pt-20">
       {/* Collections Hero */}
@@ -52,7 +76,7 @@ const Collections = () => {
               <div 
                 key={collection.id}
                 className="group relative overflow-hidden rounded-lg aspect-[4/3] cursor-pointer"
-                onClick={() => setActiveCategory(collection.id === activeCategory ? null : collection.id)}
+                onClick={() => handleCategoryClick(collection.id)}
               >
                 <img 
                   src={collection.image} 
@@ -88,7 +112,7 @@ const Collections = () => {
       )}
 
       {/* Products */}
-      <section className="section-padding">
+      <section className="section-padding products-section">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-light tracking-wide text-center mb-12">
             {activeCategory ? `${activeCategory.charAt(0).toUpperCase() + activeCategory.slice(1)} Collection` : 'All Products'}
